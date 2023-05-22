@@ -8,19 +8,32 @@ namespace _26._05
         {
             Task task;
             Console.WriteLine("Выберете задание: ");
-            int choice = Convert.ToInt32(Console.ReadLine());
-            switch (choice)
+            try
             {
-                case 2:
-                    task = new Task2();
-                    break;
-                case 4:
-                    task = new Task4();
-                    break;
-                default:
-                    throw new Exception("Такого задания не существует");
+                int choice = Convert.ToInt32(Console.ReadLine());
+                switch (choice)
+                {
+                    case 1:
+                        task = new Task1();
+                        break;
+                    case 2:
+                        task = new Task2();
+                        break;
+                    case 3:
+                        task = new Task3();
+                        break;
+                    case 4:
+                        task = new Task4();
+                        break;
+                    default:
+                        throw new Exception("Такого задания не существует");
+                }
+                task.Do();
             }
-            task.Do();
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
