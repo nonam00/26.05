@@ -2,6 +2,7 @@
 
 namespace _26._05
 {
+    //for task 2
     internal class Percent
     {
         private double value;
